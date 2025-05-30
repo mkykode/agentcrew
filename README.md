@@ -26,7 +26,7 @@ cargo install --path .
 
 ### Pre-built Binaries
 
-Download from [releases page](https://github.com/your-org/agentcrew/releases)
+Download from [releases page](https://github.com/mkykode/agentcrew/releases)
 
 ### Package Managers
 
