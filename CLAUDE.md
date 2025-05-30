@@ -143,3 +143,6 @@ I'm using this to learn RUST, so we need to ensure that the code is well-structu
 
 Most importantly, you should help implement this slowly and carefully teaching me along the way. This is very important, only write code in small chunks and explain each step. You have to ensure that I understand all the code implemented. This is the most important aspect of this project, so please take your time and ensure that I understand everything.
 </important>
+
+**IDE**
+I USE ZED EDITOR.

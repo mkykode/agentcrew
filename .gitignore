@@ -1,0 +1,54 @@
+# Rust
+/target/
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# agentcrew specific
+.agentcrew/
+*.agentcrew.json
+*.session
+agentcrew-*.log
+/sessions/
+/worktrees/
+/agent-logs/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Testing
+/test-projects/
+/tmp/
+
+# Documentation builds
+/book/
+/docs/_build/
+
+# Coverage
+tarpaulin-report.html
+cobertura.xml
+lcov.info
