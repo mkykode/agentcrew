@@ -1,5 +1,5 @@
-use clap::{Parser, Subcommand};
 use anyhow::Result;
+use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
 #[command(name = "agentcrew")]
@@ -197,7 +197,11 @@ async fn main() -> Result<()> {
             println!("🌳 Agent worktrees:");
             list_worktrees().await
         }
-        Commands::Exec { all, agent, command } => {
+        Commands::Exec {
+            all,
+            agent,
+            command,
+        } => {
             if all {
                 println!("🔧 Executing on all agents: {:?}", command);
                 exec_all(&command).await
@@ -288,23 +292,63 @@ async fn list_agents() -> Result<()> {
 }
 
 // Placeholder implementations for all other commands
-async fn pause_agent(_agent: &str) -> Result<()> { Ok(()) }
-async fn resume_agent(_agent: &str) -> Result<()> { Ok(()) }
-async fn restart_agent(_agent: &str) -> Result<()> { Ok(()) }
-async fn dismiss_agent(_agent: &str) -> Result<()> { Ok(()) }
-async fn brief_agents(_message: &str) -> Result<()> { Ok(()) }
-async fn respond_to_agent(_agent: &str, _response: &str) -> Result<()> { Ok(()) }
-async fn broadcast_message(_message: &str, _urgent: bool) -> Result<()> { Ok(()) }
-async fn list_worktrees() -> Result<()> { Ok(()) }
-async fn exec_all(_command: &[String]) -> Result<()> { Ok(()) }
-async fn exec_agent(_agent: &str, _command: &[String]) -> Result<()> { Ok(()) }
-async fn switch_to_agent(_agent: &str) -> Result<()> { Ok(()) }
-async fn show_logs(_agent: &str) -> Result<()> { Ok(()) }
-async fn follow_agent(_agent: &str) -> Result<()> { Ok(()) }
-async fn checkpoint_agent(_agent: &str, _message: &str) -> Result<()> { Ok(()) }
-async fn diff_agents(_agent1: &str, _agent2: &str) -> Result<()> { Ok(()) }
-async fn harvest_results() -> Result<()> { Ok(()) }
-async fn save_session(_name: &str) -> Result<()> { Ok(()) }
-async fn load_session(_name: &str) -> Result<()> { Ok(()) }
-async fn show_history() -> Result<()> { Ok(()) }
-async fn clean_worktrees() -> Result<()> { Ok(()) }
+async fn pause_agent(_agent: &str) -> Result<()> {
+    Ok(())
+}
+async fn resume_agent(_agent: &str) -> Result<()> {
+    Ok(())
+}
+async fn restart_agent(_agent: &str) -> Result<()> {
+    Ok(())
+}
+async fn dismiss_agent(_agent: &str) -> Result<()> {
+    Ok(())
+}
+async fn brief_agents(_message: &str) -> Result<()> {
+    Ok(())
+}
+async fn respond_to_agent(_agent: &str, _response: &str) -> Result<()> {
+    Ok(())
+}
+async fn broadcast_message(_message: &str, _urgent: bool) -> Result<()> {
+    Ok(())
+}
+async fn list_worktrees() -> Result<()> {
+    Ok(())
+}
+async fn exec_all(_command: &[String]) -> Result<()> {
+    Ok(())
+}
+async fn exec_agent(_agent: &str, _command: &[String]) -> Result<()> {
+    Ok(())
+}
+async fn switch_to_agent(_agent: &str) -> Result<()> {
+    Ok(())
+}
+async fn show_logs(_agent: &str) -> Result<()> {
+    Ok(())
+}
+async fn follow_agent(_agent: &str) -> Result<()> {
+    Ok(())
+}
+async fn checkpoint_agent(_agent: &str, _message: &str) -> Result<()> {
+    Ok(())
+}
+async fn diff_agents(_agent1: &str, _agent2: &str) -> Result<()> {
+    Ok(())
+}
+async fn harvest_results() -> Result<()> {
+    Ok(())
+}
+async fn save_session(_name: &str) -> Result<()> {
+    Ok(())
+}
+async fn load_session(_name: &str) -> Result<()> {
+    Ok(())
+}
+async fn show_history() -> Result<()> {
+    Ok(())
+}
+async fn clean_worktrees() -> Result<()> {
+    Ok(())
+}
