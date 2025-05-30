@@ -17,6 +17,7 @@
 ## 📦 Installation
 
 ### From Source (Recommended)
+
 ```bash
 git clone https://github.com/your-org/agentcrew
 cd agentcrew
@@ -24,9 +25,11 @@ cargo install --path .
 ```
 
 ### Pre-built Binaries
+
 Download from [releases page](https://github.com/your-org/agentcrew/releases)
 
 ### Package Managers
+
 ```bash
 # Homebrew (macOS/Linux)
 brew install agentcrew
@@ -38,17 +41,20 @@ cargo install agentcrew
 ## 🎯 Quick Start
 
 1. **Initialize in your project**:
+
    ```bash
    cd your-project
    agentcrew init
    ```
 
 2. **Deploy multiple agents**:
+
    ```bash
    agentcrew deploy --agents claude:2,gpt:1,jules:1 --prompt "Implement JWT authentication"
    ```
 
 3. **Monitor with TUI**:
+
    ```bash
    agentcrew tui
    ```
@@ -61,6 +67,7 @@ cargo install agentcrew
 ## 💻 Usage Examples
 
 ### Basic Deployment
+
 ```bash
 # Deploy agents with specific prompt
 agentcrew deploy --agents claude:3,gpt:2 --prompt "Add dark mode to the UI"
@@ -73,6 +80,7 @@ agentcrew logs --agent claude-1
 ```
 
 ### Interactive Development
+
 ```bash
 # Start dev servers across all worktrees
 agentcrew exec --all -- npm run dev
@@ -85,6 +93,7 @@ agentcrew switch gpt-1
 ```
 
 ### Agent Communication
+
 ```bash
 # Send instructions to all agents
 agentcrew brief "Focus on accessibility compliance"
@@ -97,6 +106,7 @@ agentcrew broadcast --urgent "Stop current work"
 ```
 
 ### Workflow Management
+
 ```bash
 # Save current session
 agentcrew save auth-implementation
@@ -114,53 +124,59 @@ agentcrew clean
 ## 📋 Commands Reference
 
 ### Core Commands
-| Command | Description |
-|---------|-------------|
-| `agentcrew init` | Initialize agentcrew in current project |
-| `agentcrew deploy` | Launch agents in separate worktrees |
-| `agentcrew status` | Display all active agents and progress |
-| `agentcrew tui` | Launch interactive terminal UI |
+
+| Command            | Description                             |
+| ------------------ | --------------------------------------- |
+| `agentcrew init`   | Initialize agentcrew in current project |
+| `agentcrew deploy` | Launch agents in separate worktrees     |
+| `agentcrew status` | Display all active agents and progress  |
+| `agentcrew tui`    | Launch interactive terminal UI          |
 
 ### Agent Management
-| Command | Description |
-|---------|-------------|
-| `agentcrew list` | Show available agent types |
-| `agentcrew pause --agent <name>` | Pause specific agent |
-| `agentcrew resume --agent <name>` | Resume paused agent |
-| `agentcrew restart --agent <name>` | Restart failed agent |
+
+| Command                            | Description                 |
+| ---------------------------------- | --------------------------- |
+| `agentcrew list`                   | Show available agent types  |
+| `agentcrew pause --agent <name>`   | Pause specific agent        |
+| `agentcrew resume --agent <name>`  | Resume paused agent         |
+| `agentcrew restart --agent <name>` | Restart failed agent        |
 | `agentcrew dismiss --agent <name>` | Terminate agent and cleanup |
 
 ### Communication & Control
-| Command | Description |
-|---------|-------------|
-| `agentcrew brief <message>` | Send instructions to all agents |
-| `agentcrew respond --agent <name> <response>` | Answer agent questions |
-| `agentcrew broadcast --urgent <message>` | Priority message to all |
+
+| Command                                       | Description                     |
+| --------------------------------------------- | ------------------------------- |
+| `agentcrew brief <message>`                   | Send instructions to all agents |
+| `agentcrew respond --agent <name> <response>` | Answer agent questions          |
+| `agentcrew broadcast --urgent <message>`      | Priority message to all         |
 
 ### Development & Execution
-| Command | Description |
-|---------|-------------|
-| `agentcrew worktrees` | List all agent worktrees |
-| `agentcrew exec --all -- <command>` | Run command across all worktrees |
+
+| Command                                      | Description                      |
+| -------------------------------------------- | -------------------------------- |
+| `agentcrew worktrees`                        | List all agent worktrees         |
+| `agentcrew exec --all -- <command>`          | Run command across all worktrees |
 | `agentcrew exec --agent <name> -- <command>` | Run command in specific worktree |
-| `agentcrew switch <agent>` | Switch to agent's worktree |
+| `agentcrew switch <agent>`                   | Switch to agent's worktree       |
 
 ### Progress & Results
-| Command | Description |
-|---------|-------------|
-| `agentcrew logs --agent <name>` | View agent logs |
-| `agentcrew follow <agent>` | Follow agent progress real-time |
-| `agentcrew checkpoint --agent <name>` | Commit agent progress |
-| `agentcrew diff <agent1> <agent2>` | Compare changes between agents |
-| `agentcrew harvest` | Collect and analyze all results |
+
+| Command                               | Description                     |
+| ------------------------------------- | ------------------------------- |
+| `agentcrew logs --agent <name>`       | View agent logs                 |
+| `agentcrew follow <agent>`            | Follow agent progress real-time |
+| `agentcrew checkpoint --agent <name>` | Commit agent progress           |
+| `agentcrew diff <agent1> <agent2>`    | Compare changes between agents  |
+| `agentcrew harvest`                   | Collect and analyze all results |
 
 ### Session Management
-| Command | Description |
-|---------|-------------|
-| `agentcrew save <name>` | Save current session |
-| `agentcrew load <name>` | Restore previous session |
-| `agentcrew history` | List previous sessions |
-| `agentcrew clean` | Clean up completed worktrees |
+
+| Command                 | Description                  |
+| ----------------------- | ---------------------------- |
+| `agentcrew save <name>` | Save current session         |
+| `agentcrew load <name>` | Restore previous session     |
+| `agentcrew history`     | List previous sessions       |
+| `agentcrew clean`       | Clean up completed worktrees |
 
 ## 🏗️ Architecture
 
@@ -202,6 +218,7 @@ agentcrew/
 ## ⚙️ Configuration
 
 ### Project Configuration (`.agentcrew/config.toml`)
+
 ```toml
 [project]
 name = "my-project"
@@ -230,6 +247,7 @@ refresh_rate = 100
 ```
 
 ### Environment Variables
+
 ```bash
 # OpenAI API Key
 export OPENAI_API_KEY="your-api-key"
@@ -265,6 +283,7 @@ The Terminal User Interface provides real-time monitoring and interaction:
 ```
 
 ### Keyboard Shortcuts
+
 - `Tab` / `Shift+Tab` - Navigate between agents
 - `Enter` - Respond to selected agent question
 - `b` - Send brief to all agents
@@ -277,11 +296,13 @@ The Terminal User Interface provides real-time monitoring and interaction:
 ## 🔧 Development
 
 ### Prerequisites
+
 - Rust 1.70+
 - Git 2.30+
 - Access to AI provider APIs
 
 ### Building from Source
+
 ```bash
 git clone https://github.com/your-org/agentcrew
 cd agentcrew
@@ -289,12 +310,14 @@ cargo build --release
 ```
 
 ### Running Tests
+
 ```bash
 cargo test
 cargo test --integration-tests
 ```
 
 ### Contributing
+
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit changes (`git commit -m 'Add amazing feature'`)
@@ -304,25 +327,33 @@ cargo test --integration-tests
 ## 🎯 Use Cases
 
 ### Feature Development
+
 Deploy multiple agents to implement the same feature with different approaches:
+
 ```bash
 agentcrew deploy --agents claude:2,gpt:2 --prompt "Implement user authentication with password reset"
 ```
 
 ### Code Review & QA
+
 Use agents to review and test each other's work:
+
 ```bash
 agentcrew deploy --agents claude:1,gpt:1 --prompt "Review and test the auth implementation in main branch"
 ```
 
 ### Performance Optimization
+
 Compare optimization strategies:
+
 ```bash
 agentcrew deploy --agents claude:1,gpt:1,jules:1 --prompt "Optimize database queries in user service"
 ```
 
 ### Bug Investigation
+
 Parallel debugging approaches:
+
 ```bash
 agentcrew deploy --agents claude:3 --prompt "Debug memory leak in worker processes"
 ```
@@ -338,6 +369,7 @@ agentcrew deploy --agents claude:3 --prompt "Debug memory leak in worker process
 ## 🔗 Integration
 
 ### CI/CD Pipeline
+
 ```yaml
 # .github/workflows/agentcrew.yml
 name: Multi-Agent Testing
@@ -356,9 +388,8 @@ jobs:
 ```
 
 ### IDE Integration
-- VS Code extension (planned)
-- Neovim plugin support
-- JetBrains plugin (planned)
+
+- Zed (planned)
 
 ## 📊 Roadmap
 
