@@ -1,6 +1,13 @@
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 
+mod cli;
+mod config;
+mod database;
+mod git;
+
+use cli::CommandHandler;
+
 #[derive(Parser)]
 #[command(name = "agentcrew")]
 #[command(about = "Parallel AI agent orchestration in separate git worktrees")]
@@ -144,8 +151,7 @@ async fn main() -> Result<()> {
 
     match cli.command {
         Commands::Init => {
-            println!("🚀 Initializing agentcrew in current project...");
-            init_project().await
+            CommandHandler::init().await
         }
         Commands::Deploy { agents, prompt } => {
             println!("🤖 Deploying agents: {}", agents);
@@ -256,12 +262,6 @@ async fn main() -> Result<()> {
 }
 
 // Basic stub implementations - we'll expand these incrementally
-async fn init_project() -> Result<()> {
-    println!("  ✅ Created .agentcrew directory");
-    println!("  ✅ Generated config.toml");
-    println!("  🎉 agentcrew initialized successfully!");
-    Ok(())
-}
 
 async fn deploy_agents(_agents: &str, _prompt: &str) -> Result<()> {
     println!("  🌿 Creating git worktrees...");
